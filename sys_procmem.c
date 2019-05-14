@@ -2,7 +2,7 @@
 #include <linux/sched.h>
 
 struct proc_segs {
-  unsigned long student_ID;
+  unsigned long studentID;
   unsigned long start_code;
   unsigned long end_code;
   unsigned long start_data;
@@ -13,7 +13,7 @@ struct proc_segs {
 }
 
 asmlinkage long sys_procmem(int pid, struct proc_segs *info) {
-  info->student_ID = 1752044;
+  info->studentID = 1752044;
   struct task_struct *task;
   for_each_process(task) {
     if (task->pid == pid) {

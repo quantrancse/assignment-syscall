@@ -12,6 +12,7 @@ for_each_process(task){
 if (task->pid == pid) {
 printk(KERN_INFO "Code Segment start = 0x%lx, end = 0x%lx\n", task->mm->start_code, task->mm->end_code);
 printk(KERN_INFO "Data Segment start = 0x%lx, end = 0x%lx\n", task->mm->start_data, task->mm->end_data);
+printk(KERN_INFO "Heap Segment start = 0x%lx, end = 0x%lx\n", task->mm->start_brk, task->mm->brk);
 printk(KERN_INFO "Stack Segment start = 0x%lx\n", task->mm->start_stack);
 }
 }
