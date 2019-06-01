@@ -1,7 +1,8 @@
 #include <linux/linkage.h>
 #include <linux/sched.h>
 
-struct proc_segs {
+struct proc_segs 
+{
   unsigned long studentID;
   unsigned long start_code;
   unsigned long end_code;
@@ -12,12 +13,16 @@ struct proc_segs {
   unsigned long start_stack;
 };
 
-asmlinkage long sys_procmem(int pid, struct proc_segs *info) {
+asmlinkage long sys_procmem(int pid, struct proc_segs *info) 
+{
   info->studentID = 1752044;
   struct task_struct *task;
-  for_each_process(task) {
-    if (task->pid == pid) {
-      if (task->mm != NULL) {
+  for_each_process(task)
+  {
+    if (task->pid == pid) 
+    {
+      if (task->mm != NULL) 
+      {
         info->start_code = task->mm->start_code;
         info->end_code = task->mm->end_code;
         info->start_data = task->mm->start_data;
@@ -31,4 +36,3 @@ asmlinkage long sys_procmem(int pid, struct proc_segs *info) {
   }
   return -1;
 }
-
