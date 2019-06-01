@@ -10,6 +10,10 @@ This report explains the steps to add a new system call that provides informatio
   $ sudo insmod ./testmem_module.ko
   $ sudo rmmod testmem_module
   ```
++ Read the system log:
+  ```bash
+  $ dmesg
+  ```
 
 ## Authors
 * **Tran Trung Quan** - *Student at Ho Chi Minh City University of Technology* - [Quan Tran](https://quantrancse.github.io)
